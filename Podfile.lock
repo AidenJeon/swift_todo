@@ -1,0 +1,16 @@
+PODS:
+  - Alamofire (3.5.1)
+  - Kingfisher (2.6.1)
+  - PureLayout (3.0.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.5.1)
+  - Kingfisher (~> 2.6.1)
+  - PureLayout (~> 3.0.2)
+
+SPEC CHECKSUMS:
+  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
+  Kingfisher: 7e5515bf6c4f2acad91f6400955d2257549cab7b
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+
+COCOAPODS: 0.39.0
