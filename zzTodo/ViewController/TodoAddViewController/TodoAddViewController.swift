@@ -10,13 +10,15 @@ import UIKit
 import PureLayout
 
 protocol TodoAddViewControllerDelegate {
-    func addTodo(title: String)
+    func addTodo(item: TodoItem)
 }
 
 class TodoAddViewController: UIViewController {
 
-    var todoTextField: UITextField!
+    var todoTextView: UITextView!
+    var takePictureButton: UIButton!
     var saveButton: UIButton!
+    var selectedImageView: UIImageView!
 
     var delegate: TodoAddViewControllerDelegate?
     
@@ -30,35 +32,59 @@ class TodoAddViewController: UIViewController {
         self.setupAutolayout()
         
         if let todoItem = self.todoItem {
-            todoTextField.text = todoItem.title
+            todoTextView.text = todoItem.title
+            selectedImageView.image = todoItem.image
         }
         
-        todoTextField.becomeFirstResponder();
+        //todoTextView.becomeFirstResponder();
     }
 
     func setupSubview() {
-        todoTextField = UITextField(frame: CGRectZero)
-        todoTextField.backgroundColor = UIColor.greenColor()
-        self.view.addSubview(todoTextField)
+        todoTextView = UITextView(frame: CGRectZero)
+        todoTextView.textAlignment = NSTextAlignment.Left
+        todoTextView.backgroundColor = UIColor.greenColor()
+        self.view.addSubview(todoTextView)
+        
+        takePictureButton = UIButton()
+        takePictureButton.setTitle("첨부", forState: .Normal)
+        takePictureButton.backgroundColor = UIColor.blueColor()
+        takePictureButton.addTarget(self, action: #selector(self.didTapTakePicture), forControlEvents: .TouchUpInside)
+        self.view.addSubview(takePictureButton)
         
         saveButton = UIButton(frame: CGRectZero)
         saveButton.setTitle("저장", forState: .Normal)
         saveButton.backgroundColor = UIColor.redColor()
         saveButton.addTarget(self, action: #selector(self.didTapSaveBtn), forControlEvents: .TouchUpInside)
         self.view.addSubview(saveButton)
+        
+        selectedImageView = UIImageView()
+        selectedImageView.backgroundColor = UIColor.purpleColor()
+        selectedImageView.contentMode = .ScaleAspectFit
+        self.view.addSubview(selectedImageView)
     }
     
     func setupAutolayout() {
         // textfield
-        todoTextField.autoPinToTopLayoutGuideOfViewController(self, withInset: 20)
-        todoTextField.autoPinEdge(.Left, toEdge: .Left, ofView: self.view, withOffset: 20);
-        todoTextField.autoPinEdge(.Right, toEdge: .Right, ofView: self.view, withOffset: -20);
-        todoTextField.autoSetDimension(.Height, toSize: 30)
+        todoTextView.autoPinToTopLayoutGuideOfViewController(self, withInset: 20)
+        todoTextView.autoPinEdge(.Left, toEdge: .Left, ofView: self.view, withOffset: 20);
+        todoTextView.autoPinEdge(.Right, toEdge: .Right, ofView: self.view, withOffset: -20);
+        todoTextView.autoSetDimension(.Height, toSize: 200)
+        
+        // take picture button
+        takePictureButton.autoSetDimensionsToSize(CGSize(width: 50, height: 30))
+        takePictureButton.autoPinEdge(.Top, toEdge: .Top, ofView: saveButton)
+        takePictureButton.autoPinEdge(.Right, toEdge: .Left, ofView: saveButton, withOffset: -10)
         
         // button
-        saveButton.autoPinEdge(.Top, toEdge: .Bottom, ofView: todoTextField, withOffset: 10)
-        saveButton.autoPinEdge(.Right, toEdge: .Right, ofView: todoTextField)
+        saveButton.autoPinEdge(.Top, toEdge: .Bottom, ofView: todoTextView, withOffset: 10)
+        saveButton.autoPinEdge(.Right, toEdge: .Right, ofView: todoTextView)
         saveButton.autoSetDimensionsToSize(CGSize(width: 50, height: 30))
+        
+        // selected image
+        selectedImageView.autoPinEdge(.Top, toEdge: .Bottom, ofView: saveButton, withOffset: 10)
+        selectedImageView.autoPinEdgeToSuperviewEdge(.Left, withInset: 10)
+        selectedImageView.autoPinEdgeToSuperviewEdge(.Right, withInset: 10)
+        selectedImageView.autoSetDimension(.Height, toSize: 100)
     }
     
     override func viewDidLayoutSubviews() {
@@ -75,13 +101,32 @@ class TodoAddViewController: UIViewController {
     */
 
     func didTapSaveBtn() {
-        if let delegate = delegate, title = todoTextField.text {
+        if let delegate = delegate, title = todoTextView.text {
             if let todoItem = self.todoItem {
                 todoItem.title = title
+                todoItem.image = selectedImageView.image
             } else {
-                delegate.addTodo(title)
+                let item = TodoItem(title: title)
+                item.image = selectedImageView.image
+                delegate.addTodo(item)
             }
             self.navigationController?.popViewControllerAnimated(true)
         }
+    }
+    
+    func didTapTakePicture() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .SavedPhotosAlbum
+        
+        self.presentViewController(picker, animated: true, completion: nil)
+    }
+}
+
+extension TodoAddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        selectedImageView.image = image
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

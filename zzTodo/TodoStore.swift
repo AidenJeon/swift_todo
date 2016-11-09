@@ -20,39 +20,6 @@ class TodoStore: NSObject {
     
     func initialize() {
         self.load()
-        var todoItem = TodoItem(title: "image 1")
-        todoItem.imageURL = "http://cfile28.uf.tistory.com/image/2746D1435735D7A22EDD98"
-        todos.append(todoItem)
-        
-        todoItem = TodoItem(title: "image 2")
-        todoItem.imageURL = "http://cfile28.uf.tistory.com/image/2746D1435735D7A22EDD98"
-        todos.append(todoItem)
-
-
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
-        todos.append(todoItem)
     }
     
     func save() {
@@ -70,9 +37,13 @@ class TodoStore: NSObject {
         return todos.count
     }
     
-    func addItem(title: String) {
-        let todoItem = TodoItem(title: title)
-        todos.append(todoItem)
+//    func addItem(title: String) {
+//        let todoItem = TodoItem(title: title)
+//        todos.append(todoItem)
+//    }
+    
+    func addItem(item: TodoItem) {
+        todos.append(item)
     }
     
     func itemForIndexPath(indexPath: NSIndexPath) -> TodoItem {

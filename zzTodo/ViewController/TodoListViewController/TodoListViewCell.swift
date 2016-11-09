@@ -61,22 +61,36 @@ class TodoListViewCell: UITableViewCell {
 //        self.contentView.addSubview(checkBox)
         
         todoLabel = UILabel(frame: CGRect(x: 5, y: 5, width: 200, height: 50))
+        todoLabel.numberOfLines = 0
+        todoLabel.backgroundColor = UIColor.redColor()
+        
         self.contentView.addSubview(todoLabel)
     }
     
     func setupAutoLayout() {
-        iconView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(10, 10, 10, 10), excludingEdge: .Right)
-        iconView.autoSetDimension(.Width, toSize: 70)
-        todoLabel.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(10, 10, 10, 10), excludingEdge: .Left)
+//        iconView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(10, 10, 10, 10), excludingEdge: .Right)
+        iconView.autoPinEdgeToSuperviewEdge(.Top, withInset: 10)
+        iconView.autoPinEdgeToSuperviewEdge(.Left, withInset: 10)
+//        iconView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10)
+        iconView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10, relation: NSLayoutRelation.GreaterThanOrEqual)
+        iconView.autoSetDimensionsToSize(CGSize(width: 70, height: 70))
+//        todoLabel.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(10, 10, 10, 10), excludingEdge: .Left)
         iconView.autoPinEdge(.Right, toEdge: .Left, ofView: todoLabel, withOffset: -10)
+        todoLabel.autoPinEdgeToSuperviewEdge(.Top, withInset: 10)
+        todoLabel.autoPinEdgeToSuperviewEdge(.Right, withInset: 10)
+        todoLabel.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10, relation: NSLayoutRelation.GreaterThanOrEqual)
     }
     
     func configureForItem(item: TodoItem) {
         self.todoLabel.text = item.title
-        if let imageURL = item.imageURL {
+//        if let imageURL = item.imageURL {
 //            self.imageView?.image = UIImage(data: NSData(contentsOfURL: NSURL(string: imageURL)!)!)
 //            self.iconView.kf_setImageWithURL(NSURL(string: imageURL))
-            self.iconView.kf_setImageWithURL(NSURL(string: imageURL), placeholderImage: nil, optionsInfo: nil, progressBlock: nil, completionHandler: nil)
+//            self.iconView.kf_setImageWithURL(NSURL(string: imageURL), placeholderImage: nil, optionsInfo: nil, progressBlock: nil, completionHandler: nil)
+        if let image = item.image {
+            self.iconView.image = image
+        } else {
+            self.iconView.image = nil
         }
     }
     

@@ -14,6 +14,7 @@ class TodoItem: NSObject, NSCoding {
     var order: Int = 0
     var done: Bool = false
     var imageURL: String?
+    var image: UIImage?
     
     init(title: String?) {
         self.title = title
@@ -21,9 +22,11 @@ class TodoItem: NSObject, NSCoding {
     
     required init?(coder aDecoder: NSCoder) {
         self.title = aDecoder.decodeObjectForKey("title") as? String
+        self.image = aDecoder.decodeObjectForKey("image") as? UIImage
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(self.title, forKey: "title")
+        aCoder.encodeObject(self.image, forKey: "image")
     }
 }

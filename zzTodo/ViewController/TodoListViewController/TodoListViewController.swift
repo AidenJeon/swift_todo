@@ -25,8 +25,10 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.backgroundColor = UIColor.yellowColor()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 60
+//        tableView.rowHeight = 200
         tableView.registerClass(TodoListViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44.0
         self.view.addSubview(tableView)
         
 //        tableView.editing = true
@@ -111,8 +113,12 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
 
 extension TodoListViewController: TodoAddViewControllerDelegate {
     
-    func addTodo(title: String) {
-        todoStore.addItem(title)
+//    func addTodo(title: String) {
+//        todoStore.addItem(title)
+//        self.tableView.reloadData()
+//    }
+    func addTodo(item: TodoItem) {
+        todoStore.addItem(item)
         self.tableView.reloadData()
     }
 }
