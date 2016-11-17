@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "84F3F67E50D81E0F4CB82A2759C3BD69"
+               BlueprintIdentifier = "E8A5CF9E4792B0C9B8539B4C006FFA79"
                BuildableName = "Pods_zzTodo.framework"
                BlueprintName = "Pods-zzTodo"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "84F3F67E50D81E0F4CB82A2759C3BD69"
+            BlueprintIdentifier = "E8A5CF9E4792B0C9B8539B4C006FFA79"
             BuildableName = "Pods_zzTodo.framework"
             BlueprintName = "Pods-zzTodo"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "84F3F67E50D81E0F4CB82A2759C3BD69"
-            BuildableName = "Pods_zzTodo.framework"
-            BlueprintName = "Pods-zzTodo"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

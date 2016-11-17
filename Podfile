@@ -8,6 +8,8 @@ target 'zzTodo' do
 pod 'PureLayout', '~> 3.0.2'
 pod 'Kingfisher', '~> 2.6.1'
 pod 'Alamofire', '~> 3.5.1'
+pod 'SwiftyJSON', '~>2.3.2'
+pod 'ObjectMapper', '~>1.4.0'
 
 end
 

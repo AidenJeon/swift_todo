@@ -6,28 +6,43 @@
 	<dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ObjectMapper.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-zzTodo.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-zzTodoTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>PureLayout.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5005B9F10E609861F2CEDF8E02473B7E</key>
+		<key>764D363C043FE900F0596E459D7D4A93</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +52,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>84F3F67E50D81E0F4CB82A2759C3BD69</key>
+		<key>A14D8BA6703C474E6BC2E4686663CD68</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A14D8BA6703C474E6BC2E4686663CD68</key>
+		<key>C31A540DD6DB56404A28511F9FCEB0D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CC6BB74912D739D7899922FDAFD216F5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E8A5CF9E4792B0C9B8539B4C006FFA79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED0E06DCD9B37240AA226AF60FABC6A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

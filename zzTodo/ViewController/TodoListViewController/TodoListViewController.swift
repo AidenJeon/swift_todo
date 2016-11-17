@@ -39,7 +39,14 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         let addBarButton = UIBarButtonItem(customView: addButton)
         self.navigationItem.rightBarButtonItem = addBarButton
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        APIClient.sharedInstance.getData { (colorInfoList) in
+            for colorInfo in colorInfoList {
+                let todoItem = TodoItem(title: colorInfo.value)
+                TodoStore.sharedInstance.addItem(todoItem)
+            }
+            self.tableView.reloadData()
+        }
         
     }
 
