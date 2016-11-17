@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3555C8731DDAB18200321EE6 /* MoveAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3555C8721DDAB18200321EE6 /* MoveAnimation.swift */; };
+		3555C8751DDAB37A00321EE6 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3555C8741DDAB37A00321EE6 /* MyButton.swift */; };
 		8262CEA2E6E89950E768045D /* Pods_zzTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9500CD30F6BD632739F4D2D /* Pods_zzTodo.framework */; };
 		9D749A821DB08CBA0070BC8B /* TodoListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D749A811DB08CBA0070BC8B /* TodoListViewCell.swift */; };
 		9DA0E5151DB5C4DE008EA6B7 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA0E5141DB5C4DE008EA6B7 /* TodoItem.swift */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		25523180738903388FA6EB27 /* Pods-zzTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zzTodo.release.xcconfig"; path = "Pods/Target Support Files/Pods-zzTodo/Pods-zzTodo.release.xcconfig"; sourceTree = "<group>"; };
+		3555C8721DDAB18200321EE6 /* MoveAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveAnimation.swift; sourceTree = "<group>"; };
+		3555C8741DDAB37A00321EE6 /* MyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
 		9D749A811DB08CBA0070BC8B /* TodoListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListViewCell.swift; sourceTree = "<group>"; };
 		9D76B29359ED084CA39BB2B4 /* Pods-zzTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zzTodo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zzTodo/Pods-zzTodo.debug.xcconfig"; sourceTree = "<group>"; };
 		9DA0E5141DB5C4DE008EA6B7 /* TodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				9DA0E5171DB5D3F0008EA6B7 /* UIViewExtension.swift */,
+				3555C8721DDAB18200321EE6 /* MoveAnimation.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				9DA380171DA7538700AD74C9 /* TodoAddViewController.swift */,
+				3555C8741DDAB37A00321EE6 /* MyButton.swift */,
 			);
 			path = TodoAddViewController;
 			sourceTree = "<group>";
@@ -342,6 +348,8 @@
 				9DA380181DA7538700AD74C9 /* TodoAddViewController.swift in Sources */,
 				9DA380161DA7537100AD74C9 /* TodoListViewController.swift in Sources */,
 				9D749A821DB08CBA0070BC8B /* TodoListViewCell.swift in Sources */,
+				3555C8751DDAB37A00321EE6 /* MyButton.swift in Sources */,
+				3555C8731DDAB18200321EE6 /* MoveAnimation.swift in Sources */,
 				9DE8C1BB1DC8415B00A92B0A /* TodoStore.swift in Sources */,
 				9DA37FF21DA7524000AD74C9 /* AppDelegate.swift in Sources */,
 			);

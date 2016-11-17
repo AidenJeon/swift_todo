@@ -38,6 +38,9 @@ class TodoListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let addBarButton = UIBarButtonItem(customView: addButton)
         self.navigationItem.rightBarButtonItem = addBarButton
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
     }
 
     override func didReceiveMemoryWarning() {

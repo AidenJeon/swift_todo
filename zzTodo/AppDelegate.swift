@@ -17,7 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+//        UIApplication.sharedApplication().registerUserNotificationSettings(forTypes: [.alert, .badge, .sound], categories: UI)
+        
         TodoStore.sharedInstance.initialize()
+        
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
         
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
